@@ -134,9 +134,7 @@
   overflow: hidden;
   background-color: #92000a;
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  
 }
 
 .topnav a {
