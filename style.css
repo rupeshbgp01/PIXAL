@@ -6,6 +6,7 @@
    padding: 0;
    margin: 0;
    box-sizing: border-box;
+   scroll-behavior: smooth;
  }
 
  :root {
@@ -114,7 +115,7 @@
    width: 5rem;
    height: 5rem;
    border: 1px solid var(--white);
-   box-shadow: 1px 1px 10px var(--shade_brown);
+   
 
  }
 
@@ -329,19 +330,12 @@
 
 
 
- /* ---footer------------------- */
-
- .footer {
-   height: 50vh;
-   background-color: var(--sangria);
- }
-
-
  /* -----movable announcemenyt */
  .movable_announcement {
    height: 7vh;
-   background-color: var(--sangria);
+   background-color: transparent;
    color: var(--white);
+  
    font-size: 1.5rem;
    display: flex;
    align-items: center;
@@ -517,11 +511,19 @@
 
 
  /* --------------About Us---------------------- */
+.about__wrapper{
+  height: max-content;
+  background-color: var(--black);
+  display: flex;
+  flex-direction: column;
+  height: 115vh;
+  /* padding: 2rem; */
+ 
+}
+
 
  .about__container{
-  height: 100vh;
   background-color: var(--black);
-  /* background: url("effect.webp"); */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -531,8 +533,6 @@
 a {
   text-decoration: none;
 }
-
-/* ---------card------ */
 
 
 .card__container {
@@ -553,6 +553,13 @@ a {
   border-radius: 1.5rem;
   text-align: center;
   box-shadow: 0 4px 16px var(--white);
+}
+.title{
+  padding: 2rem;
+  font-family: cursive;
+  font-weight: 600;
+  font-size: 3rem;
+  text-align: center;
 }
 
 .card__img {
@@ -638,7 +645,7 @@ a {
 
 /* --------news__container----------- */
 .news__container{
-  width: 80%;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -646,193 +653,73 @@ a {
 }
 
 .news{
- border-bottom: 1px solid var(--sangria);
+ border-bottom: 1px solid var(--white);
   padding: 1rem 0rem;
 }
 
 .scroll__news>a{
-  color:var(--white);
+  color:var(--sangria);
+  font-size: 1.5rem;
+  text-align: center;
 }
 
 
 
 /* -----------------footer-------------- */
 footer{
-  /* position: fixed; */
-  /* bottom: 0; */
+ 
   width: 100%;
-  background-color: #053742;
+  background-color: var(--sangria);
+  color: var(--grey);
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-.container{
+.footer__container{
   display: flex;
   padding: 3rem;
 }
 
-.container .section{
+.footer__container .section{
   flex-basis: 50%;
   padding: 0 20px;
 }
 
 .section h2{
-  font-size: 1.125rem;
+  font-size: 2rem;
+  color: var(--shade_brown);
+  font-family: cursive;
   font-weight: 600;
   text-transform: uppercase;
+  border-bottom: 2px solid var(--white);
 }
 
-.section .content{
+.section .footer__content{
   margin:20px 0 0 0;
   position: relative;
 }
 
-.section .content::before{
-  position: absolute;
-  content: '';
-  top: -10px;
-  height: 2px;
-  width: 100%;
+.links{
+  display: flex;
+  flex-direction: column;
+  
 }
-
-.section .content::after{
-  position: absolute;
-  content: '';
-  height: 2px;
-  width: 15%;
-  background-color: #dd5f24;
-  top: -10px;
+.links>a,.content>a{
+  color: var(--grey);
 }
-
-.left .content .social{
-  margin: 20px 0 0 0;
+.content{
+  display: flex;
+  flex-direction: column;
+  color: var(--grey);
+ 
 }
-
-.left .content .social a{
-  padding: 0 2px;
-}
-
-.left .content .social a span{
-  height: 40px;
-  width: 40px;
-  background: transparent;
-  line-height: 40px;
+.footer__bottom{
   text-align: center;
-  font-size: 18px;
-  border-radius: 50px;
-  transition: 0.4s;
-  border:1px solid #656565;
+  font-size: 1.5rem;
+  
 }
-
-
-.left .content .social a span:hover{
-  background: #dd5f24;
+.footer__bottom>span>a{
+  color: var(--white);
 }
-
-.center .content .fas{
-  font-size: 1.1rem;
-  background: transparent;
-  height: 45px;
-  width: 45px;
-  line-height: 45px;
-  text-align: center;
-  border-radius: 50px;
-  transition: 0.3s;
-  cursor: pointer;
-  border:1px solid #656565;
-}
-
-.center .content .fas:hover{
-  background: #dd5f24;
-  border:1px solid #dd5f24;
-}
-
-.center .content .text{
-  font-size: 1.0.6rem;
-  font-weight: 500;
-  padding-left: 10px;
-}
-
-.center .content .phone{
-  margin: 15px 0;
-}
-
-.right form .text{
-  font-size: 1.0625rem;
-  margin-bottom: 2px;
-  color: #656565;
-}
-
-.right form input{
-  width: 100%;
-  font-size: 1.0625rem;
-  background: transparent;
-  border: 1px solid #656565;
-}
-
-.right form input{
-  height: 35px;
-}
-
-.right form .btn{
-  margin-top: 10px;
-}
-
-.right form .btn button{
-  height: 40px;
-  width: 100%;
-  border:none;
-  outline: none;
-  background: #dd5f24;
-  font-size: 1.0625rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-
-.right form .btn button:hover{
-  background: #000;
-}
-
-.footer-bottom center{
-  padding: 5px;
-  font-size: 0.9375rem;
-  background: #151515;
-}
-
-.footer-bottom center span{
-  color: #656565;
-}
-
-.footer-bottom center a{
-  text-decoration: none;
-}
-
-.footer-bottom center a:hover{
-  text-decoration: underline;
-}
-
-@media screen and (max-width:700px){
-  footer{
-      position: relative;
-      bottom: 0px;
-  }
-
-  .left .content{
-      padding-right:0px;
-      padding-bottom: 30px;
-  }
-
-  .container{
-      flex-wrap: wrap;
-      flex-direction: column;
-      padding:0.5rem;
-  }
-
-  .container .section{
-      margin:5px 0;
-  }
-}
-
 
 .slide__nav{
   display: block;
@@ -841,11 +728,64 @@ footer{
     padding: 0.5rem;
 }
 
-
 /* ----------responsiveness----------------- */
 
+
+
+@media screen and (max-width:700px){
+  footer{
+      position: relative;
+      bottom: 0px;
+  }
+
+  .left .footer__content{
+      padding-right:0px;
+      padding-bottom: 30px;
+  }
+
+  .footer__container{
+      flex-wrap: wrap;
+      /* flex-direction: column; */
+      padding:0.5rem;
+  }
+
+  .footer__container .section{
+      margin:5px 0;
+  }
+
+  .large_font{
+    font-size: 1.5rem;
+  }
+
+  .about__container{
+    flex-direction: column;
+    gap: 3rem;
+  }
+  .news__container{
+    padding: 2rem;
+  }
+  .links>a,.content>a{
+    font-size: 0.8rem;
+  }
+  .section h2{
+    font-size: 1.5rem;
+  }
+  .secHeading{
+    text-align: center;
+    font-size: 2rem;
+  }
+  .heading{
+    font-size: 2rem;
+  }
+}
+
+
+
+
+
+
 @media only screen and (max-width:1240px) {
-  .buttons{
+  /* .buttons{
     flex-direction: column;
     background-color: var(--sangria);
     text-align: center;
@@ -855,5 +795,20 @@ footer{
     position: absolute;
     left: 1rem;
     padding: 0.5rem;
+  } */
+
+  .secHeading{
+    padding: 3rem 5rem;
   }
+  .text{
+    padding: 1rem 3rem;
+    font-size: 1rem;
+  }
+  .scroll__news>a{
+    font-size: 1rem;
+  }
+  .footer__bottom{
+    font-size: 1rem;
+  }
+
 }
