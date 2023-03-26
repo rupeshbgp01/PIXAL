@@ -22,7 +22,8 @@ function disapper(){
   document.getElementById('appear_div').style.display = "none";
 }
 
-// -------slider navbar-----------
+// -------gallery-----------
+
 
 
 
